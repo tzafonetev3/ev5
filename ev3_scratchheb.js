@@ -1471,7 +1471,7 @@ function(ext)
               ["w", "הפעל %m.dualMotors %m.turnStyle %n שניות",         "steeringControl",  "B+C", "forward", 3],
               [" ", "הפעל מנוע %m.whichMotorPort מהירות %n",              "startMotors",      "B+C", 100],
               [" ", "הפעל מנועים %m.whichMotorPort במהירות %n סיבוב במעלות  %n  ואז  %m.brakeCoast",              "motorDegrees",      "A", 100, 360, "brake"],
-              [" ", "עצור מנועים %m.whichMotorPort %m.brakeCoast",                       "motorsOff",     "כל המנועים", "brake"],
+              [" ", "עצור מנועים %m.whichMotorPort %m.brakeCoast",                       "motorsOff",     "הכל", "brake"],
               [" ", "הדלק לד %m.patterns",                                 "setLED",                 "green"],
               ["h", "כאשר חישן המגע נלחץ בחיבור לערוץ %m.whichInputPort",       "whenButtonPressed","1"],
               ["h", "when IR remote %m.buttons pressed port %m.whichInputPort", "whenRemoteButtonPressed","Top Left", "1"],
@@ -1484,7 +1484,7 @@ function(ext)
               ["R", "motor %m.motorInputMode %m.whichMotorIndividual",     "readFromMotor",   "position", "A"],
                     ],
      "menus": {
-     "whichMotorPort":   ["A", "B", "C", "D", "A+D", "B+C", "כל המנועים"],
+     "whichMotorPort":   ["A", "B", "C", "D", "A+D", "B+C", "הכל"],
      "whichMotorIndividual":   ["A", "B", "C", "D"],
      "dualMotors":       ["A+D", "B+C"],
      "turnStyle":        ["forward", "reverse", "right", "left"],
