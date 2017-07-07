@@ -1470,7 +1470,7 @@ function(ext)
      blocks: [
               ["w", "הפעל %m.dualMotors %m.turnStyle %n שניות",         "steeringControl",  "B+C", "forward", 3],
               [" ", "הפעל מנוע %m.whichMotorPort מהירות %n",              "startMotors",      "B+C", 100],
-              [" ", "הפעל מנוע %m.whichMotorPort במהירות %n בכמות של %n מעלות ואז %m.brakeCoast",              "motorDegrees",      "A", 100, 360, "brake"],
+              [" ", "הפעל מנוע %m.whichMotorPort במהירות %n  בסיבוב של %n מעלות ואז %m.brakeCoast",              "motorDegrees",      "A", 100, 360, "brake"],
               [" ", "עצור מנועים %m.whichMotorPort %m.brakeCoast",                       "motorsOff",     "כל המנועים", "brake"],
               [" ", "הדלק לד %m.patterns",                                 "setLED",                 "green"],
               ["h", "כאשר חישן המגע נלחץ בחיבור לערוץ %m.whichInputPort",       "whenButtonPressed","1"],
