@@ -1,4 +1,4 @@
-﻿// EV3 ScratchX Plugin
+// EV3 ScratchX Plugin
 // Copyright 2015 Ken Aspeslagh @massivevector
 // Only tested on Mac. On Mac, ev3 brick must be named starting with "serial" if the plugin is to recognize it.
 // Rename the brick before pairing it with the Mac or else the name gets cached and the serial port will have the old name
@@ -216,17 +216,17 @@ function playStartUpTones()
     var tonedelay = 1000;
     setTimeout(function()
                       {
-                      playFreqM2M(262, 100);
+                      playFreq(262, 100, function(){});
                       }, tonedelay);
     
     setTimeout(function()
                       {
-                      playFreqM2M(392, 100);
+                      playFreq(392, 100, function(){});
                       }, tonedelay+150);
     
     setTimeout(function()
                       {
-                      playFreqM2M(523, 100);
+                      playFreq(523, 100, function(){});
                       }, tonedelay+300);
 }
 
@@ -735,20 +735,6 @@ function motor2(which, speed)
 }
 
 
-
-function playFreqM2M(freq, duration)
-{
-    console_log("playFreqM2M duration: " + duration + " freq: " + freq);
-    var volume = 100;
-    var volString = getPackedOutputHexString(volume, 1);
-    var freqString = getPackedOutputHexString(freq, 2);
-    var durString = getPackedOutputHexString(duration, 2);
-    
-    var toneCommand = createMessage(DIRECT_COMMAND_PREFIX + PLAYTONE + volString + freqString + durString);
-    
-    addToQueryQueue([TONE_QUERY, 0, null, toneCommand]);
-}
-
 function clearDriveTimer()
 {
     if (driveTimer)
@@ -1165,7 +1151,7 @@ function scanPorts()
 
 function shouldChunkTranfers()
 {
-    return false;
+    return true;
 }
 
 // ScratchX specific stuff
@@ -1482,33 +1468,33 @@ function(ext)
      // Block and block menu descriptions
      var descriptor = {
      blocks: [
-              ["w", "מנועים %m.dualMotors %m.turnStyle %n שניות",         "steeringControl",  "B+C", "קדימה", 3],
-              [" ", "הפעל מנוע %m.whichMotorPort במהירות %n",              "startMotors",      "B+C", 100],
-              [" ", "סובב מנוע %m.whichMotorPort במהירות %n בערך מעלות של %n ואז %m.brakeCoast",              "motorDegrees",      "A", 100, 360, "brake"],
-              [" ", "עצור מנועים %m.whichMotorPort %m.brakeCoast",                       "motorsOff",     "all", "brake"],
-              [" ", "הגדר לדים %m.patterns",                                 "setLED",                 "green"],
-              ["h", "כאשר לחצן נלחץ בפורט %m.whichInputPort",       "whenButtonPressed","1"],
+              ["w", "drive %m.dualMotors %m.turnStyle %n seconds",         "steeringControl",  "B+C", "forward", 3],
+              [" ", "start motor %m.whichMotorPort speed %n",              "startMotors",      "B+C", 100],
+              [" ", "rotate motor %m.whichMotorPort speed %n by %n degrees then %m.brakeCoast",              "motorDegrees",      "A", 100, 360, "brake"],
+              [" ", "stop motors %m.whichMotorPort %m.brakeCoast",                       "motorsOff",     "all", "brake"],
+              [" ", "set LED %m.patterns",                                 "setLED",                 "green"],
+              ["h", "when button pressed on port %m.whichInputPort",       "whenButtonPressed","1"],
               ["h", "when IR remote %m.buttons pressed port %m.whichInputPort", "whenRemoteButtonPressed","Top Left", "1"],
-              ["R", "לחצן נלחץ %m.whichInputPort",                    "readTouchSensorPort",   "1"],
-              ["w", "נגן צליל %m.note במשך %n ms",                    "playTone",         "C5", 500],
-              ["w", "נגן תדר %n במשך %n ms",                    "playFreq",         "262", 500],
-              ["R", "חיישן אור %m.whichInputPort %m.lightSensorMode",   "readColorSensorPort",   "1", "color"],
-              ["R", "מדוד מרחק %m.whichInputPort",                  "readDistanceSensorPort",   "1"],
+              ["R", "button pressed %m.whichInputPort",                    "readTouchSensorPort",   "1"],
+              ["w", "play note %m.note duration %n ms",                    "playTone",         "C5", 500],
+              ["w", "play frequency %n duration %n ms",                    "playFreq",         "262", 500],
+              ["R", "light sensor %m.whichInputPort %m.lightSensorMode",   "readColorSensorPort",   "1", "color"],
+              ["R", "measure distance %m.whichInputPort",                  "readDistanceSensorPort",   "1"],
               ["R", "remote button %m.whichInputPort",                     "readRemoteButtonPort",   "1"],
-              ["R", "מנוע %m.motorInputMode %m.whichMotorIndividual",     "readFromMotor",   "position", "A"],
+              ["R", "motor %m.motorInputMode %m.whichMotorIndividual",     "readFromMotor",   "position", "A"],
                     ],
      "menus": {
      "whichMotorPort":   ["A", "B", "C", "D", "A+D", "B+C", "all"],
      "whichMotorIndividual":   ["A", "B", "C", "D"],
      "dualMotors":       ["A+D", "B+C"],
-     "turnStyle":        ["קדימה", "אחורה", "ימינה", "שמאלה"],
+     "turnStyle":        ["forward", "reverse", "right", "left"],
      "brakeCoast":       ["brake", "coast"],
      "lightSensorMode":  ["reflected", "ambient", "color"],
      "motorInputMode": ["position", "speed"],
      "gyroMode": ["angle", "rate"],
      "note":["C4","D4","E4","F4","G4","A4","B4","C5","D5","E5","F5","G5","A5","B5","C6","D6","E6","F6","G6","A6","B6","C#4","D#4","F#4","G#4","A#4","C#5","D#5","F#5","G#5","A#5","C#6","D#6","F#6","G#6","A#6"],
      "whichInputPort": ["1", "2", "3", "4"],
-     "patterns": ["off", "ירוק", "אדום", "כתום", "green flashing", "red flashing", "orange flashing", "green pulse", "red pulse", "orange pulse"],
+     "patterns": ["off", "green", "red", "orange", "green flashing", "red flashing", "orange flashing", "green pulse", "red pulse", "orange pulse"],
      "buttons": IRbuttonNames,
      },
      };
