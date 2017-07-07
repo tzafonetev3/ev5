@@ -1472,7 +1472,7 @@ function(ext)
               [" ", "הפעל מנוע %m.whichMotorPort מהירות %n",              "startMotors",      "B+C", 100],
               [" ", "הפעל מנוע %m.whichMotorPort במהירות %n בכמות של %n מעלות ואז %m.brakeCoast",              "motorDegrees",      "A", 100, 360, "brake"],
               [" ", "עצור מנועים %m.whichMotorPort %m.brakeCoast",                       "motorsOff",     "כל המנועים", "brake"],
-              [" ", "הדלק נורה %m.patterns",                                 "setLED",                 "בצבע ירוק"],
+              [" ", "set LED %m.patterns",                                 "setLED",                 "green"],
               ["h", "כאשר חישן המגע נלחץ בחיבור לערוץ %m.whichInputPort",       "whenButtonPressed","1"],
               ["h", "when IR remote %m.buttons pressed port %m.whichInputPort", "whenRemoteButtonPressed","Top Left", "1"],
               ["R", "חישן מגע נלחץ %m.whichInputPort",                    "readTouchSensorPort",   "1"],
