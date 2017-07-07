@@ -1469,8 +1469,8 @@ function(ext)
      var descriptor = {
      blocks: [
               ["w", "הפעל %m.dualMotors %m.turnStyle %n שניות",         "steeringControl",  "B+C", "קדימה", 3],
-              [" ", "start motor %m.whichMotorPort speed %n",              "startMotors",      "B+C", 100],
-              [" ", "rotate motor %m.whichMotorPort speed %n by %n degrees then %m.brakeCoast",              "motorDegrees",      "A", 100, 360, "brake"],
+              [" ", "הפעל ממוע %m.whichMotorPort מהירות %n",              "startMotors",      "B+C", 100],
+              [" ", "הפעל מנוע %m.whichMotorPort במהירות %n by %n degrees then %m.brakeCoast",              "motorDegrees",      "A", 100, 360, "brake"],
               [" ", "stop motors %m.whichMotorPort %m.brakeCoast",                       "motorsOff",     "all", "brake"],
               [" ", "set LED %m.patterns",                                 "setLED",                 "green"],
               ["h", "when button pressed on port %m.whichInputPort",       "whenButtonPressed","1"],
