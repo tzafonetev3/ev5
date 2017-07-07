@@ -117,7 +117,7 @@ var sensorNames = { "7E" : "None", "7F" : "Port Error", "FF" : "Unknown", "7D" :
 
 var port_Assignments = port_Assignments || [0, 0, 0, 0, 0, 0, 0, 0, 0];
 
-var ledColors = {"off" : "00", "green" : "01", "red" : "02", "orange" : "03", "green flashing" : "04", "red flashing" : "05", "orange flashing" : "06", "green pulse" : "07", "red pulse" : "08", "orange pulse" : "09"}
+var ledColors = {"כבוי" : "00", "ירוק" : "01", "אדום" : "02", "כתום" : "03", "ירוק מהבהב" : "04", "אדום מהבהב" : "05", "כתום מהבהב" : "06", "ירוק פולסי" : "07", "אדום פולס" : "08", "כתום פולס" : "09"}
 
 
 function clearSensorStatuses()
@@ -1494,7 +1494,7 @@ function(ext)
      "gyroMode": ["angle", "rate"],
      "note":["C4","D4","E4","F4","G4","A4","B4","C5","D5","E5","F5","G5","A5","B5","C6","D6","E6","F6","G6","A6","B6","C#4","D#4","F#4","G#4","A#4","C#5","D#5","F#5","G#5","A#5","C#6","D#6","F#6","G#6","A#6"],
      "whichInputPort": ["1", "2", "3", "4"],
-     "patterns": ["off", "green", "red", "orange", "green flashing", "red flashing", "orange flashing", "green pulse", "red pulse", "orange pulse"],
+     "patterns": ["כבוי", "ירוק", "אדום", "כתום", "ירוק מהבהב", "אדום מהבהב", "כתום מהבהב", "ירוק פולסי", "אדום פולסי", "כתום פולסי"],
      "buttons": IRbuttonNames,
      },
      };
