@@ -1471,7 +1471,7 @@ function(ext)
               ["w", "הפעל %m.dualMotors %m.turnStyle %n שניות",         "steeringControl",  "B+C", "forward", 3],
               [" ", "הפעל מנוע %m.whichMotorPort מהירות %n",              "startMotors",      "B+C", 100],
               [" ", "הפעל מנועים %m.whichMotorPort במהירות %n סיבוב במעלות  %n  ואז  %m.brakeCoast",              "motorDegrees",      "A", 100, 360, "brake"],
-             [" ", "עצור מנועים %m.whichMotorPort %m.brakeCoast",                       "motorsOff",     "all", "brake"],
+              [" ", "עצור מנועים %m.whichMotorPort %m.brakeCoast",                    "motorsOff",     "all", "brake"],
               [" ", "הדלק לד %m.patterns",                                 "setLED",                 "green"],
               ["h", "כאשר חישן המגע נלחץ בחיבור לערוץ %m.whichInputPort",       "whenButtonPressed","1"],
               ["h", "when IR remote %m.buttons pressed port %m.whichInputPort", "whenRemoteButtonPressed","Top Left", "1"],
