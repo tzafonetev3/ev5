@@ -1484,7 +1484,7 @@ function(ext)
               ["R", "motor %m.motorInputMode %m.whichMotorIndividual",     "readFromMotor",   "position", "A"],
                     ],
      "menus": {
-     "whichMotorPort":   ["A", "B", "C", "D", "A+D", "B+C", "all"],
+     "whichMotorPort":   ["A", "B", "C", "D", "A+D", "B+C", "כל המנועים"],
      "whichMotorIndividual":   ["A", "B", "C", "D"],
      "dualMotors":       ["A+D", "B+C"],
      "turnStyle":        ["forward", "reverse", "right", "left"],
