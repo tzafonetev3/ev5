@@ -1468,7 +1468,7 @@ function(ext)
      // Block and block menu descriptions
      var descriptor = {
      blocks: [
-              ["w", "הפעל %m.dualMotors %m.turnStyle %n שניות",         "steeringControl",  "B+C", "קדימה", 3],
+              ["w", "הפעל %m.dualMotors %m.turnStyle %n שניות",         "steeringControl",  "B+C", "forward", 3],
               [" ", "הפעל מנוע %m.whichMotorPort מהירות %n",              "startMotors",      "B+C", 100],
               [" ", "הפעל מנוע %m.whichMotorPort במהירות %n בכמות של %n מעלות ואז %m.brakeCoast",              "motorDegrees",      "A", 100, 360, "brake"],
               [" ", "עצור מנועים %m.whichMotorPort %m.brakeCoast",                       "motorsOff",     "כל המנועים", "brake"],
