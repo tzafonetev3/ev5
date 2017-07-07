@@ -1469,13 +1469,13 @@ function(ext)
      var descriptor = {
      blocks: [
               ["w", "הפעל %m.dualMotors %m.turnStyle %n שניות",         "steeringControl",  "B+C", "קדימה", 3],
-              [" ", "הפעל ממוע %m.whichMotorPort מהירות %n",              "startMotors",      "B+C", 100],
+              [" ", "הפעל מנוע %m.whichMotorPort מהירות %n",              "startMotors",      "B+C", 100],
               [" ", "הפעל מנוע %m.whichMotorPort במהירות %n בכמות של %n מעלות ואז %m.brakeCoast",              "motorDegrees",      "A", 100, 360, "brake"],
               [" ", "עצור מנועים %m.whichMotorPort %m.brakeCoast",                       "motorsOff",     "כל המנועים", "brake"],
               [" ", "הדלק נורה %m.patterns",                                 "setLED",                 "בצבע ירוק"],
-              ["h", "when button pressed on port %m.whichInputPort",       "whenButtonPressed","1"],
+              ["h", "כאשר חישן המגע נלחץ בחיבור לערוץ %m.whichInputPort",       "whenButtonPressed","1"],
               ["h", "when IR remote %m.buttons pressed port %m.whichInputPort", "whenRemoteButtonPressed","Top Left", "1"],
-              ["R", "button pressed %m.whichInputPort",                    "readTouchSensorPort",   "1"],
+              ["R", "חישן מגע נלחץ %m.whichInputPort",                    "readTouchSensorPort",   "1"],
               ["w", "play note %m.note duration %n ms",                    "playTone",         "C5", 500],
               ["w", "play frequency %n duration %n ms",                    "playFreq",         "262", 500],
               ["R", "light sensor %m.whichInputPort %m.lightSensorMode",   "readColorSensorPort",   "1", "color"],
