@@ -1476,6 +1476,7 @@ function(ext)
               [" ", "הדלק לד %m.patterns",                                 "setLED",                 "green"],
               ["h", "כאשר חישן המגע נלחץ בחיבור לערוץ %m.whichInputPort",       "whenButtonPressed","1"],
               ["R", "חישן מגע נלחץ %m.whichInputPort",                    "readTouchSensorPort",   "1"],
+              ['R', 'ערך גירו %m.gyroMode %m.whichInputPort',                 'readGyroPort',  'angle', '1'],
               ["w", "נגן תו %m.note במשך %n ms",                    "playTone",         "C5", 500],
               ["w", "נגן תו בתדר %n במשך %n ms",                    "playFreq",         "262", 500],
               ["R", "חיישן האור %m.whichInputPort %m.lightSensorMode",   "readColorSensorPort",   "1", "color"],
@@ -1483,7 +1484,7 @@ function(ext)
               ["R", "מנוע %m.motorInputMode %m.whichMotorIndividual",     "readFromMotor",   "position", "A"],
               ["R", "remote button %m.whichInputPort",                     "readRemoteButtonPort",   "1"],
               ["h", "when IR remote %m.buttons pressed port %m.whichInputPort", "whenRemoteButtonPressed","Top Left", "1"],
-             ['R', 'gyro  %m.gyroMode %m.whichInputPort',                 'readGyroPort',  'angle', '1'],
+            
 
                     ],
      "menus": {
