@@ -5,6 +5,7 @@
 // My bricks are named serialBrick1 (etc)
 // Turn off the iPod/iPhone/iPad checkbox on the EV3 Bluetooth settings after pairing or else it will not work at all
 
+
 function timeStamp()
 {
     return (new Date).toISOString().replace(/z|t/gi,' ').trim();
@@ -1482,7 +1483,7 @@ function(ext)
               ["R", "מנוע %m.motorInputMode %m.whichMotorIndividual",     "readFromMotor",   "position", "A"],
               ["R", "remote button %m.whichInputPort",                     "readRemoteButtonPort",   "1"],
               ["h", "when IR remote %m.buttons pressed port %m.whichInputPort", "whenRemoteButtonPressed","Top Left", "1"],
-              ["R", "measure gyro  on port %m.whichInputPort",      "position", "speed"],
+             ['R', 'gyro  %m.gyroMode %m.whichInputPort',                 'readGyroPort',  'angle', '1'],
 
                     ],
      "menus": {
